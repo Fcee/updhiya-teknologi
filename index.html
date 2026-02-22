@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpDhiya Teknologi | Software House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+
+        /* Slider Transitions */
+        .slide-content {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-900 bg-white min-h-screen selection:bg-blue-600 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div id="logo-placeholder" class="w-10 h-10 bg-slate-900 flex items-center justify-center text-white font-bold text-xl rounded-sm cursor-pointer transition-transform hover:rotate-90">
+                    U
+                </div>
+                <span class="font-bold text-2xl tracking-tighter">UpDhiya.</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#work" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600 transition relative group">
+                    Work
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#services" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600 transition relative group">
+                    Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="text-sm font-medium uppercase tracking-widest hover:text-blue-600 transition relative group">
+                    About
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="px-6 py-3 bg-slate-900 text-white text-sm font-bold uppercase tracking-wider hover:bg-blue-600 transition duration-300">
+                    Start Project
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden p-2 z-50 relative">
+                <div id="line1" class="w-6 h-0.5 bg-slate-900 mb-1.5 transition-all"></div>
+                <div id="line2" class="w-6 h-0.5 bg-slate-900 mb-1.5 transition-all"></div>
+                <div id="line3" class="w-6 h-0.5 bg-slate-900 transition-all"></div>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 p-6 md:hidden shadow-xl">
+            <div class="flex flex-col space-y-4 text-center">
+                <a href="#work" class="mobile-link text-lg font-bold uppercase tracking-widest text-slate-900">Work</a>
+                <a href="#services" class="mobile-link text-lg font-bold uppercase tracking-widest text-slate-900">Services</a>
+                <a href="#about" class="mobile-link text-lg font-bold uppercase tracking-widest text-slate-900">About</a>
+                <a href="#contact" class="mobile-link text-lg font-bold uppercase tracking-widest text-slate-900">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="pt-40 pb-20 px-6 lg:px-12 max-w-[1440px] mx-auto">
+        <div class="reveal-content opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <h1 class="text-[12vw] leading-[0.85] font-bold tracking-tighter text-slate-900 mb-10">
+                DIGITAL <br />
+                <span class="text-blue-600">EVOLUTION.</span>
+            </h1>
+            <div class="flex flex-col md:flex-row justify-between items-end border-t border-slate-200 pt-8 mt-12">
+                <p class="max-w-xl text-xl md:text-2xl text-slate-600 leading-relaxed font-light">
+                    Kami merancang aplikasi web & mobile kompleks dengan standar kode tinggi. Solusi software house untuk bisnis modern.
+                </p>
+                <div class="hidden md:block">
+                    <p class="text-sm font-bold uppercase tracking-widest text-slate-400">Scroll Down</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="relative flex overflow-hidden py-6 border-y border-slate-200 bg-white z-20">
+        <div class="animate-marquee gap-16 items-center">
+            <div class="flex gap-16 text-4xl font-bold text-slate-300 uppercase tracking-tighter">
+                <span>Laravel</span>
+                <span class="text-slate-900">Flutter</span>
+                <span>React</span>
+                <span class="text-blue-600">UpDhiya</span>
+                <span>Vue</span>
+                <span class="text-slate-900">Inertia</span>
+                <span>Tailwind</span>
+                <span class="text-blue-600">Fullstack</span>
+            </div>
+            <!-- Duplicate for infinite effect -->
+            <div class="flex gap-16 text-4xl font-bold text-slate-300 uppercase tracking-tighter">
+                <span>Laravel</span>
+                <span class="text-slate-900">Flutter</span>
+                <span>React</span>
+                <span class="text-blue-600">UpDhiya</span>
+                <span>Vue</span>
+                <span class="text-slate-900">Inertia</span>
+                <span>Tailwind</span>
+                <span class="text-blue-600">Fullstack</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURED PROJECTS SLIDER -->
+    <section id="work" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-2">Featured Work</h2>
+                <p id="project-count" class="text-slate-500 uppercase tracking-widest">
+                    4 Projects Available
+                </p>
+            </div>
+
+            <div class="hidden md:flex gap-4">
+                <button onclick="paginate(-1)" class="p-4 border border-slate-300 rounded-full hover:bg-slate-900 hover:text-white transition">←</button>
+                <button onclick="paginate(1)" class="p-4 border border-slate-300 rounded-full hover:bg-slate-900 hover:text-white transition">→</button>
+            </div>
+        </div>
+
+        <div class="relative w-full h-[60vh] md:h-[80vh] max-w-[1440px] mx-auto px-0 md:px-6 lg:px-12 group">
+            <div id="slider-container" class="relative w-full h-full rounded-none md:rounded-3xl overflow-hidden shadow-2xl bg-slate-200 transition-all duration-500">
+                <!-- Background Image -->
+                <img id="slider-img" src="" alt="Project" class="w-full h-full object-cover scale-100 transition-transform duration-[10000ms]">
+                
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                <!-- Content -->
+                <div class="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white">
+                    <div id="slider-text-content" class="slide-content">
+                        <p id="project-category" class="text-blue-400 font-bold uppercase tracking-widest mb-2"></p>
+                        <h3 id="project-title" class="text-4xl md:text-7xl font-bold mb-4"></h3>
+                        <p id="project-desc" class="text-slate-300 text-lg md:text-xl max-w-2xl line-clamp-3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div id="slider-dots" class="absolute bottom-6 right-6 md:right-20 flex gap-2 z-20">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 px-6 lg:px-12 max-w-[1440px] mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tight">Our Services</h2>
+            <span class="text-slate-500 uppercase tracking-widest mt-4 md:mt-0">End-to-End Solutions</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-slate-200">
+            <!-- Service Items -->
+            <div class="group p-10 border-r border-b border-slate-200 hover:bg-slate-50 transition duration-500 cursor-default">
+                <span class="text-sm font-mono text-blue-600 mb-6 block">01</span>
+                <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition duration-300">Mobile Apps</h3>
+                <p class="text-slate-500 leading-relaxed text-lg">Flutter Development untuk iOS & Android dengan performa native.</p>
+            </div>
+            <div class="group p-10 border-r border-b border-slate-200 hover:bg-slate-50 transition duration-500 cursor-default">
+                <span class="text-sm font-mono text-blue-600 mb-6 block">02</span>
+                <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition duration-300">Web Platforms</h3>
+                <p class="text-slate-500 leading-relaxed text-lg">SaaS & Web App berskala besar menggunakan Laravel & React.</p>
+            </div>
+            <div class="group p-10 border-r border-b border-slate-200 hover:bg-slate-50 transition duration-500 cursor-default">
+                <span class="text-sm font-mono text-blue-600 mb-6 block">03</span>
+                <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition duration-300">UI/UX Design</h3>
+                <p class="text-slate-500 leading-relaxed text-lg">Perancangan antarmuka yang intuitif dan berfokus pada konversi.</p>
+            </div>
+            <div class="group p-10 border-r border-b border-slate-200 hover:bg-slate-50 transition duration-500 cursor-default">
+                <span class="text-sm font-mono text-blue-600 mb-6 block">04</span>
+                <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition duration-300">IT Consulting</h3>
+                <p class="text-slate-500 leading-relaxed text-lg">Audit sistem dan strategi transformasi digital perusahaan.</p>
+            </div>
+            <div class="group p-10 border-r border-b border-slate-200 hover:bg-slate-50 transition duration-500 cursor-default">
+                <span class="text-sm font-mono text-blue-600 mb-6 block">05</span>
+                <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition duration-300">Custom CRM</h3>
+                <p class="text-slate-500 leading-relaxed text-lg">Sistem manajemen pelanggan yang disesuaikan dengan workflow Anda.</p>
+            </div>
+            <div class="group p-10 border-r border-b border-slate-200 hover:bg-slate-50 transition duration-500 cursor-default">
+                <span class="text-sm font-mono text-blue-600 mb-6 block">06</span>
+                <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition duration-300">Maintenance</h3>
+                <p class="text-slate-500 leading-relaxed text-lg">Dukungan teknis jangka panjang dan optimasi server.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-sm font-bold text-blue-500 uppercase tracking-wider mb-4">About UpDhiya</h2>
+                <h3 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                    Lebih dari sekadar penulis kode. Kami adalah mitra strategis Anda.
+                </h3>
+                <div class="text-slate-400 text-lg leading-relaxed">
+                    UpDhiya Teknologi adalah software house yang berfokus pada kualitas kode dan kepuasan klien. Kami menggabungkan teknologi terbaru seperti Laravel, Flutter, dan React untuk membangun solusi yang tahan lama.
+                </div>
+            </div>
+            <div class="relative h-[500px] w-full rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition duration-700">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Team" />
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-950 text-white pt-24 pb-12 px-6 lg:px-12 border-t border-slate-900">
+        <div class="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-16 border-b border-slate-900 pb-24">
+            <div>
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+                    Have an idea?
+                </h2>
+                <a href="https://wa.me/083846115305" class="text-3xl md:text-5xl text-blue-500 hover:text-white transition border-b-2 border-blue-500 pb-2 inline-block">
+                    Tell us about it.
+                </a>
+            </div>
+            <div class="flex flex-col justify-end">
+                <div class="grid grid-cols-2 gap-8 text-lg text-slate-400">
+                    <div>
+                        <h4 class="text-white font-bold uppercase tracking-widest mb-4 text-sm">Contact</h4>
+                        <p class="text-sm md:text-base">+62 838-4611-5305</p>
+                        <p class="text-sm md:text-base truncate">updhiyastartup2045@gmail.com</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold uppercase tracking-widest mb-4 text-sm">Location</h4>
+                        <p class="text-sm md:text-base">Pacitan, Indonesia</p>
+                        <p class="text-sm md:text-base">UpDhiya HQ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto pt-8 flex flex-col md:flex-row justify-between text-slate-600 text-sm uppercase tracking-widest">
+            <p>&copy; <span id="year"></span> UpDhiya Teknologi.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Admin Login</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- DATA PROJECTS ---
+        const projects = [
+            {
+                id: 'dummy-1',
+                title: "Jadwal Weddingku",
+                category: "SaaS Platform • Laravel",
+                image: "https://images.unsplash.com/photo-1510076857177-7470076d4098?ixlib=rb-4.0.3&auto=format&fit=crop&w=2672&q=80",
+                description: "Platform undangan pernikahan digital dengan fitur manajemen tamu real-time."
+            },
+            {
+                id: 'dummy-2',
+                title: "EduTech LMS",
+                category: "E-Learning • Flutter",
+                image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2672&q=80",
+                description: "Aplikasi pembelajaran interaktif untuk sekolah dengan fitur kuis dan video."
+            },
+            {
+                id: 'dummy-3',
+                title: "Geo-Spatial (GIS)",
+                category: "Mapping • React Leaflet",
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2672&q=80",
+                description: "Sistem pemetaan digital untuk analisis tata kota dan pemantauan aset berbasis lokasi."
+            },
+            {
+                id: 'dummy-4',
+                title: "Smart Fishery",
+                category: "IoT Dashboard • Vue JS",
+                image: "https://images.unsplash.com/photo-1535591273668-578e31182c4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80",
+                description: "Sistem monitoring kualitas air dan pakan otomatis untuk manajemen tambak ikan modern."
+            }
+        ];
+
+        // --- STATE ---
+        let currentIndex = 0;
+        let sliderInterval;
+
+        // --- DOM ELEMENTS ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const l1 = document.getElementById('line1');
+        const l2 = document.getElementById('line2');
+        const l3 = document.getElementById('line3');
+        const sliderImg = document.getElementById('slider-img');
+        const sliderCategory = document.getElementById('project-category');
+        const sliderTitle = document.getElementById('project-title');
+        const sliderDesc = document.getElementById('project-desc');
+        const sliderTextContainer = document.getElementById('slider-text-content');
+        const dotsContainer = document.getElementById('slider-dots');
+
+        // --- FUNCTIONS ---
+
+        // Navbar Mobile Toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if(isOpen) {
+                l1.classList.add('rotate-45', 'translate-y-2');
+                l2.classList.add('opacity-0');
+                l3.classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                l1.classList.remove('rotate-45', 'translate-y-2');
+                l2.classList.remove('opacity-0');
+                l3.classList.remove('-rotate-45', '-translate-y-2');
+            }
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                l1.classList.remove('rotate-45', 'translate-y-2');
+                l2.classList.remove('opacity-0');
+                l3.classList.remove('-rotate-45', '-translate-y-2');
+            });
+        });
+
+        // Initialize Dots
+        function initDots() {
+            dotsContainer.innerHTML = '';
+            projects.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-blue-500' : 'w-2 bg-white/50 hover:bg-white'}`;
+                dot.onclick = () => goToSlide(idx);
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // Slider Navigation
+        function updateSlider() {
+            const project = projects[currentIndex];
+            
+            // Text Animation Effect
+            sliderTextContainer.classList.add('fade-enter');
+            
+            setTimeout(() => {
+                sliderImg.src = project.image;
+                sliderCategory.textContent = project.category;
+                sliderTitle.textContent = project.title;
+                sliderDesc.textContent = project.description;
+                
+                // Update Dots
+                Array.from(dotsContainer.children).forEach((dot, idx) => {
+                    dot.className = `h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-blue-500' : 'w-2 bg-white/50 hover:bg-white'}`;
+                });
+
+                sliderTextContainer.classList.remove('fade-enter');
+                sliderTextContainer.classList.add('fade-enter-active');
+            }, 50);
+
+            // Reset image scale for ken burns effect
+            sliderImg.style.transition = 'none';
+            sliderImg.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                sliderImg.style.transition = 'transform 10000ms linear';
+                sliderImg.style.transform = 'scale(1)';
+            }, 50);
+        }
+
+        function paginate(dir) {
+            currentIndex = (currentIndex + dir + projects.length) % projects.length;
+            updateSlider();
+            resetAutoPlay();
+        }
+
+        function goToSlide(idx) {
+            currentIndex = idx;
+            updateSlider();
+            resetAutoPlay();
+        }
+
+        function startAutoPlay() {
+            sliderInterval = setInterval(() => paginate(1), 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(sliderInterval);
+            startAutoPlay();
+        }
+
+        // --- INIT ---
+        window.onload = () => {
+            document.querySelector('.reveal-content').classList.remove('opacity-0', 'translate-y-10');
+            document.getElementById('year').textContent = new Date().getFullYear();
+            document.getElementById('project-count').textContent = `${projects.length} Projects Available`;
+            
+            initDots();
+            updateSlider();
+            startAutoPlay();
+        };
+    </script>
+</body>
+</html>
